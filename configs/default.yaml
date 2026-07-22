@@ -1,0 +1,25 @@
+seed: 42
+output_dir: artifacts
+data:
+  raw_path: data/raw/otto-recsys-train.jsonl
+  processed_path: data/processed/otto_hourly.csv
+  frequency: 1h
+  lookback: 168
+  horizon: 24
+  validation_steps: 96
+  test_steps: 96
+  seasonality: 24
+model:
+  d_model: 32
+  nhead: 4
+  num_layers: 2
+  dim_feedforward: 128
+  dropout: 0.15
+training:
+  batch_size: 32
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  patience: 12
+  gradient_clip: 1.0
+  num_workers: 0
